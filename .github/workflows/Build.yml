@@ -13,8 +13,8 @@ jobs:
         echo --------------------------
         ls -a
         echo --------------------------
-    - name: unpacking
-      run: tar -xvf gpredict-x.y.z.tar.gz
+    - name: run ./autogen.sh
+      run: ./autogen.sh
     - name: ls -a
       run: |
         echo --------------------------
