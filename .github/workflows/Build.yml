@@ -10,7 +10,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: ls -la
       run: |
-        echo --------------------------
+        echo -e "(ls -la) for: /c" && pwd --------------------------
         ls -la
         echo --------------------------
     - name: sudo apt update
@@ -31,20 +31,20 @@ jobs:
       run: ./configure 
     - name: ls -la
       run: |
-        echo ls -la--------------------------
+        echo -e "(ls -la) for: /c" && pwd --------------------------
         ls -la
         echo --------------------------
-        echo ls -la ./build--------------------------
+        echo -e "(ls -la./build) for: /c" && pwd -------------------------
         ls -la ./build
         echo ------------------------
     - name: ./make
       run:  ./make
     - name: ls -la
       run: |
-        echo ls -la--------------------------
+        echo -e "(ls -la) for: /c" && pwd--------------------------
         ls -la
         echo --------------------------
-        echo ls -la ./build--------------------------
+        echo -e "(ls -la ./build) for: /c" && pwd--------------------------
         ls -la ./build
         echo ------------------------
     - name: tree -a
