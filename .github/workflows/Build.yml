@@ -37,8 +37,8 @@ jobs:
         echo -e "(ls -la./build) for: \c" && pwd && echo -------------------------
         ls -la ./build
         echo ------------------------
-    - name: ./make
-      run:  ./make
+    - name: make
+      run:  make
     - name: ls -la
       run: |
         echo -e "(ls -la) for: \c" && pwd && echo --------------------------
