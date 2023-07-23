@@ -37,8 +37,8 @@ jobs:
         echo ls -la ./build--------------------------
         ls -la ./build
         echo ------------------------
-    - name: ../make
-      run:  ../make
+    - name: ./make
+      run:  ./make
     - name: ls -la
       run: |
         echo ls -la--------------------------
