@@ -27,8 +27,8 @@ jobs:
         cd ./build
         pwd
     # так как в скрипте выше нет команды "./configure", то вызываем её сами
-    - name: ../configure
-      run: ../configure 
+    - name: ./configure
+      run: ./configure 
     - name: ls -la
       run: |
         echo ls -la--------------------------
