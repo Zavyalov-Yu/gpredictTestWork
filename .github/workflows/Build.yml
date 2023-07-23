@@ -21,21 +21,31 @@ jobs:
         sudo apt install pkg-config libglib2.0-dev libgtk-3-dev libgoocanvas-2.0-dev
     - name: run ./autogen.sh
       run: ./autogen.sh
+    - name: create folder "build"
+      run: |
+        mkdir build
+        cd ./build
     # так как в скрипте выше нет команды "./configure", то вызываем её сами
-    - name: ./configure
-      run: ./configure 
+    - name: ../configure
+      run: ../configure 
     - name: ls -la
       run: |
-        echo --------------------------
+        echo ls -la--------------------------
         ls -la
         echo --------------------------
-    - name: make
-      run:  make
+        echo ls -la ./build--------------------------
+        ls -la ./build
+        echo ------------------------
+    - name: ../make
+      run:  ../make
     - name: ls -la
       run: |
-        echo --------------------------
+        echo ls -la--------------------------
         ls -la
         echo --------------------------
+        echo ls -la ./build--------------------------
+        ls -la ./build
+        echo ------------------------
     - name: tree -a
       run: |
         echo --------------------------
