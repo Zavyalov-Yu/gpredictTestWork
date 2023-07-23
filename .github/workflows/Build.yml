@@ -21,6 +21,9 @@ jobs:
         sudo apt install pkg-config libglib2.0-dev libgtk-3-dev libgoocanvas-2.0-dev
     - name: run ./autogen.sh
       run: ./autogen.sh
+    # так как в скрипте выше нет команды "./configure", то вызываем её сами
+    - name: ./configure
+      run: ./configure 
     - name: ls -la
       run: |
         echo --------------------------
