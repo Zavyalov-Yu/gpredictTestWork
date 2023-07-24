@@ -40,6 +40,11 @@ jobs:
         echo -e "(ls -la./build) for: \c" && pwd && echo -------------------------
         ls -la ./build
         echo ------------------------
+    - name: tree -a
+      run: |
+        echo --------------------------
+        tree -a
+        echo --------------------------
     - name: make
       run: |
         cd build
