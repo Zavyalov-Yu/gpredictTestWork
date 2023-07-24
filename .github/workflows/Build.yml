@@ -21,17 +21,17 @@ jobs:
         sudo apt install pkg-config libglib2.0-dev libgtk-3-dev libgoocanvas-2.0-dev
     - name: run ./autogen.sh
       run: ./autogen.sh
-    - name: create folder "build"
+    - name: create folder "build" and "install"
       run: |
         mkdir build
-        cd ./build
-        pwd
+        mkdir install
     # так как в скрипте выше нет команды "./configure", то вызываем её сами
     - name: ../configure
       run: |
         cd ./build
         pwd
-        ../configure  
+        # Изменим путь в который будет установлена программа 
+        ../configure --prefix /home/runner/work/gpredictTestWork/gpredictTestWork/install 
     - name: ls -la
       run: |
         echo -e "(ls -la) for: \c" && pwd && echo --------------------------
@@ -66,3 +66,4 @@ jobs:
         echo --------------------------
         tree -a
         echo --------------------------
+    
