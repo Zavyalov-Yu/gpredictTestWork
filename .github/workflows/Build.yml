@@ -66,4 +66,11 @@ jobs:
         echo --------------------------
         tree -a
         echo --------------------------
+    - name: make install
+      run: make install
+    - name: tree -a
+      run: |
+        echo --------------------------
+        tree -a
+        echo --------------------------
     
