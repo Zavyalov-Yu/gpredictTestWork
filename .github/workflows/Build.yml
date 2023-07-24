@@ -41,7 +41,9 @@ jobs:
         ls -la ./build
         echo ------------------------
     - name: make
-      run:  make
+      run: |
+        pwd
+        make
     - name: ls -la
       run: |
         echo -e "(ls -la) for: \c" && pwd && echo --------------------------
