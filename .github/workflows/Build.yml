@@ -40,11 +40,14 @@ jobs:
         echo -e "(ls -la./build) for: \c" && pwd && echo -------------------------
         ls -la ./build
         echo ------------------------
+    # make ищет файлы ".cat", которые лежат в data/satdata. Скопирую их в build/data/satdata
+    - name: .cat file copying
+      run: cp -r ./data/satdata/* ./build/data/satdata
     - name: tree -a
       run: |
         echo --------------------------
         tree -a
-        echo --------------------------
+        echo --------------------------  
     - name: make
       run: |
         cd build
