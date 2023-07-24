@@ -42,6 +42,7 @@ jobs:
         echo ------------------------
     - name: make
       run: |
+        cd build
         pwd
         make
     - name: ls -la
