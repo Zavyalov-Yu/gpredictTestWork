@@ -29,6 +29,7 @@ jobs:
     # так как в скрипте выше нет команды "./configure", то вызываем её сами
     - name: ../configure
       run: |
+        cd ./build
         pwd
         ../configure  
     - name: ls -la
