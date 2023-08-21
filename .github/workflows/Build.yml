@@ -20,7 +20,8 @@ jobs:
         sudo apt install libtool intltool autoconf automake libcurl4-openssl-dev
         sudo apt install pkg-config libglib2.0-dev libgtk-3-dev libgoocanvas-2.0-dev
     - name: run ./autogen.sh
-      run: ./autogen.sh
+    # Изменим путь в который будет установлена программа 
+      run: ./autogen.sh  --prefix /home/runner/work/gpredictTestWork/gpredictTestWork/install 
     - name: create folder "build" and "install"
       run: |
         mkdir build
@@ -30,8 +31,6 @@ jobs:
       run: |
         cd ./build
         pwd
-        # Изменим путь в который будет установлена программа 
-        ../configure --prefix /home/runner/work/gpredictTestWork/gpredictTestWork/install 
     - name: ls -la
       run: |
         echo -e "(ls -la) for: \c" && pwd && echo --------------------------
