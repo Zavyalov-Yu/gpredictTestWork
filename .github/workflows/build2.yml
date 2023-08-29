@@ -39,13 +39,13 @@ jobs:
         cd ${{env.build_folder}}
         make
     - name: ls -lt ./build/gpredict-2.3.54
-      run: ls -lt cd ${{env.build_folder}}
+      run: ls -lt ${{env.build_folder}}
     - name: dh_make --createorig
       run: |
         cd ${{env.build_folder}}
         dh_make --createorig
     - name: ls -lt ./build/gpredict-2.3.54
-      run: ls -lt cd ${{env.build_folder}}
+      run: ls -lt ${{env.build_folder}}
 
     
       
