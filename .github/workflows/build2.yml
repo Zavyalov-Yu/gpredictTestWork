@@ -18,7 +18,8 @@ jobs:
       run:  mkdir ./build/gpredict-2.3.54 
       #копируем исходники
     - name: copying files
-      run: mv ./* ./build/gpredict-2.3.54 > /dev/null 2>&1 # перенаправляем вывод ошибок в битоприемник, чтобы не крашился workflow
+      run: mv ./* ./build/gpredict-2.3.54 
+      continue-on-error: true # если ошибка на этом шаге - всё равно продолжаем
     - name: ls -lt
       run: ls -lt
     - name: ls -lt
