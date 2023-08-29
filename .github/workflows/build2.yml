@@ -2,6 +2,9 @@ name: C_build2
 
 on: [workflow_dispatch]
 
+env:
+  build_folder: ./build/gpredict-2.3.54
+
 jobs:
   build_linux:
 
@@ -15,11 +18,26 @@ jobs:
       #Создаем папку с именем по правилу "<Имя_Программы>_<Версия>"
       #Чтобы в ней собирать .deb-пакет
     - name: create folder ./build/gpredict-2.3.54
-      run:  mkdir ./build/gpredict-2.3.54 
+      run:  mkdir ${{env.build_folder}}
       #копируем исходники
     - name: copying files
-      run: mv ./* ./build/gpredict-2.3.54 
-      continue-on-error: true # если ошибка на этом шаге - всё равно продолжаем
+      run: mv ./* ${{env.build_folder}}
+        # если ошибка на этом шаге - всё равно продолжаем
+      continue-on-error: true 
+    - name: sudo apt update
+      run: sudo apt update
+    - name: apt install
+      run: |
+        sudo apt install libtool intltool autoconf automake libcurl4-openssl-dev
+        sudo apt install pkg-config libglib2.0-dev libgtk-3-dev libgoocanvas-2.0-dev
+    - name: run ./autogen.sh
+      run: | 
+        cd ${{env.build_folder}}
+        ./autogen.sh
+    - name: make
+      run: |
+        cd ${{env.build_folder}}
+        make
     - name: ls -lt
       run: ls -lt
     - name: ls -lt
