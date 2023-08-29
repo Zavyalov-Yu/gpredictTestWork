@@ -1,0 +1,25 @@
+name: C_build2
+
+on: [workflow_dispatch]
+
+jobs:
+  build_linux:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: clone repo
+      uses: actions/checkout@v3
+    - name: create folder ./build
+      run:  mkdir ./build   
+      #Создаем папку с именем по правилу "<Имя_Программы>_<Версия>"
+      #Чтобы в ней собирать .deb-пакет
+    - name: create folder ./build/gpredict-2.3.54
+      run:  mkdir ./build/gpredict-2.3.54 
+      #копируем исходники
+    - name: copying files
+      run: mv ./* ./build/gpredict-2.3.54
+    - name: ls -lt
+      run: ls -lt
+    - name: ls -lt
+      run: ls -lt ./build/gpredict-2.3.54 
