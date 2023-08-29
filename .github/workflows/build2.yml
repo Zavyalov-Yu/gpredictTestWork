@@ -40,6 +40,8 @@ jobs:
         make
     - name: ls -lt ./build/gpredict-2.3.54
       run: ls -lt ${{env.build_folder}}
+    - name: sudo apt-get install build-essential dh-make
+      run: sudo apt-get install build-essential dh-make
     - name: dh_make --createorig
       run: |
         cd ${{env.build_folder}}
