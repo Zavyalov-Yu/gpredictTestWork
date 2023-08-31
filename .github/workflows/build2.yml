@@ -67,7 +67,5 @@ jobs:
       run: ./autogen.sh
     - name: make
       run: make
-    - name: ls -lt ./build/gpredict-2.3.54
-      run: ls -lt ${{env.build_folder}}
     - name: sudo apt install mingw-w64
       run: sudo apt install mingw-w64
