@@ -46,8 +46,28 @@ jobs:
       run: |
         cd ${{env.build_folder}}
         dh_make --createorig
-    - name: ls -lt ./build/gpredict-2.3.54
-      run: ls -lt ${{env.build_folder}}
+#    - name: ls -lt ./build/gpredict-2.3.54
+#      run: ls -lt ${{env.build_folder}}
 
     
-      
+  build_windows:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: clone repo
+      uses: actions/checkout@v3
+    - name: sudo apt update
+      run: sudo apt update
+    - name: apt install
+      run: |
+        sudo apt install libtool intltool autoconf automake libcurl4-openssl-dev
+        sudo apt install pkg-config libglib2.0-dev libgtk-3-dev libgoocanvas-2.0-dev
+    - name: run ./autogen.sh
+      run: ./autogen.sh
+    - name: make
+      run: make
+    - name: ls -lt ./build/gpredict-2.3.54
+      run: ls -lt ${{env.build_folder}}
+    - name: sudo apt install mingw-w64
+      run: sudo apt install mingw-w64
