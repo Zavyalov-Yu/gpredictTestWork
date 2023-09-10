@@ -66,6 +66,8 @@ jobs:
         update: true #обновляем пакеты 
         install: mingw-w64-i686-gcc mingw-w64-i686-gtk3 mingw-w64-i686-goocanvas #установим пакеты
     - name: make
-      run: make
+      run: |
+        cd win32
+        make
     - name: ls -lR
       run: ls -lR
