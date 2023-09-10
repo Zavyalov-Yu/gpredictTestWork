@@ -65,7 +65,10 @@ jobs:
         msystem: mingw32
         update: true #обновляем пакеты 
         install: mingw-w64-i686-gcc  #установим пакеты
-    
+    - name: pacman -Ss
+      run: |
+            pacman -Ss Gtk3 
+            pacman -Ss Goocanvas2 
     
     
     
