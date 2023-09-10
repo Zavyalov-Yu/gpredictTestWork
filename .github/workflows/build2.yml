@@ -64,7 +64,7 @@ jobs:
       with:
         msystem: mingw32
         update: true #обновляем пакеты 
-        install: mingw-w64-i686 Gtk3 Goocanvas2 #установим пакеты
+        install: mingw-w64-i686-gcc  #установим пакеты
     
     
     
