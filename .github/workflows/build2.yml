@@ -65,8 +65,6 @@ jobs:
         msystem: mingw64
         update: true #обновляем пакеты 
         install: mingw-w64-i686-gcc mingw-w64-i686-gtk3 mingw-w64-i686-goocanvas #установим пакеты
-    - name: run ./autogen.sh
-      run: ./autogen.sh
     - name: make
       run: make
     - name: ls -lR
