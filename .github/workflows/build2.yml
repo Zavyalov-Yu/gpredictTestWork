@@ -67,7 +67,7 @@ jobs:
         install: mingw-w64-i686-gcc mingw-w64-i686-gtk3  #установим пакеты
     - name: pacman -Ss
       run: |
-           pacman -Ss Goocanvas2 
+           pacman -Ss goocanvas
     
     
     
