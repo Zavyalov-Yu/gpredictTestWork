@@ -74,3 +74,23 @@ jobs:
         cd win32
         make
 
+  build_windows_on_linux:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: clone repo
+      uses: actions/checkout@v3
+    - name: sudo apt update
+      run: sudo apt update
+    - name: apt install
+      run: |
+        sudo apt install libtool intltool autoconf automake libcurl4-openssl-dev
+        sudo apt install pkg-config libglib2.0-dev libgtk-3-dev libgoocanvas-2.0-dev
+    - name: run ./autogen.sh --host=i686-w64-mingw32
+      run: ./autogen.sh  --host=i686-w64-mingw32
+    - name: make
+      run: | 
+        cd win32
+        make
+
