@@ -68,7 +68,7 @@ jobs:
     - name: tree 
       run: tree
     - name: tree C
-      run:  tree C:
+      run:  tree C:/
     - name: tree /F
       run: tree /F
     - name: make
