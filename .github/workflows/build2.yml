@@ -64,7 +64,7 @@ jobs:
       with:
         msystem: mingw32
         update: true #обновляем пакеты 
-        install: mingw-w64-i686-gcc mingw-w64-i686-gtk3 mingw-w64-i686-goocanvas pacman -S mingw-w64-x86_64-toolchain base-devel #установим пакеты
+        install: mingw-w64-i686-gcc mingw-w64-i686-gtk3 mingw-w64-i686-goocanvas mingw-w64-x86_64-toolchain #установим пакеты
     - name: tree 
       run: tree
     - name: tree C
