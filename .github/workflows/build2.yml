@@ -71,7 +71,6 @@ jobs:
       run: tree /F
     - name: make
       run: |
-        cd win32
         make
 
 
