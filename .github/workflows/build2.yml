@@ -67,10 +67,7 @@ jobs:
         install: mingw-w64-i686-pkg-config mingw-w64-i686-gtk3 mingw-w64-i686-goocanvas mingw-w64-x86_64-toolchain #установим пакеты       
     - name: dir C:\msys64
       run: |
-        dir C:\msys64
-    - name: dir C:\msys64\mingw32
-      run: |
-        dir C:\msys64\mingw32
+        pacman - Suy
     - name: dir C:\msys64\mingw32\bin
       run: |
         dir C:\msys64\mingw32\bin
