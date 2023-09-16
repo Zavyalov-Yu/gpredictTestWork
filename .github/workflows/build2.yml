@@ -65,6 +65,8 @@ jobs:
         msystem: mingw32
         update: true #обновляем пакеты 
         install: mingw-w64-i686-pkg-config mingw-w64-i686-gtk3 mingw-w64-i686-goocanvas mingw-w64-x86_64-toolchain #установим пакеты        
+    - name: dir
+    - run: dir C:\ /A:-H
     - name: make
       run: |
         cd win32
