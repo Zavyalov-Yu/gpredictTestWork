@@ -73,7 +73,18 @@ jobs:
        pacman -Ql mingw-w64-i686-goocanvas
        pacman -Ql mingw-w64-x86_64-toolchain
       continue-on-error: true 
-    - name: dir 
+    - name: dir 1
+      run: |
+        C:
+        cd \
+        dir 
+        cd msys64
+        dir 
+        cd mingw32
+        dir 
+        cd bin
+        dir
+    - name: dir 2
       run: |
         dir C:\
         dir C:\msys64
