@@ -64,7 +64,7 @@ jobs:
       with:
         msystem: mingw32
         update: true #обновляем пакеты 
-        install: mingw-w64-i686-pkg-config mingw-w64-i686-gtk3 mingw-w64-i686-goocanvas mingw-w64-x86_64-toolchain #установим пакеты       
+        install: mingw-w64-i686-pkg-config mingw-w64-i686-gtk3 mingw-w64-i686-goocanvas mingw-w64-x86_64-toolchain autotools #установим пакеты       
     - name: ---
       run: |
        # глянем, что содержат пакеты
@@ -76,11 +76,8 @@ jobs:
     - name: dir 
       run: |
         dir C:\
-        echo ********************************************
         dir C:\msys64
-        echo ********************************************
         dir C:\msys64\mingw32
-        echo ********************************************
         dir C:\msys64\mingw32\bin
         continue-on-error: true 
     - name: make
