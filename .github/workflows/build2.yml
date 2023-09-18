@@ -71,12 +71,7 @@ jobs:
        pacman -Ql  mingw-w64-i686-pkg-config
        pacman -Ql mingw-w64-i686-gtk3
        pacman -Ql mingw-w64-i686-goocanvas
-       pacman -Ql mingw-w64-x86_64-toolchain
       continue-on-error: true 
-    - name: dir  C:\msys64\mingw32\bin
-      run: |
-        C
-        dir
     - name: make
       run: |
         cd win32
