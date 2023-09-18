@@ -68,7 +68,7 @@ jobs:
     - name: ---
       run: |
        # глянем, что содержат пакеты
-       pacman -Ql  mingw-w64-i686-pkg-confi
+       pacman -Ql  mingw-w64-i686-pkg-config
        pacman -Ql mingw-w64-i686-gtk3
        pacman -Ql mingw-w64-i686-goocanvas
        pacman -Ql mingw-w64-x86_64-toolchain
