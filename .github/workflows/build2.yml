@@ -67,9 +67,11 @@ jobs:
         install: mingw-w64-i686-pkg-config mingw-w64-i686-gtk3 mingw-w64-i686-goocanvas mingw-w64-x86_64-toolchain #установим пакеты       
     - name: ---
       run: |
-       pacman -v
-       gcc -v
-       make -v
+       # глянем, что содержат пакеты
+       pacman -Ql  mingw-w64-i686-pkg-confi
+       pacman -Ql mingw-w64-i686-gtk3
+       pacman -Ql mingw-w64-i686-goocanvas
+       pacman -Ql mingw-w64-x86_64-toolchain
       continue-on-error: true 
     - name: dir C:\msys64\mingw32\bin
       run: |
