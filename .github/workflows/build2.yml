@@ -64,18 +64,13 @@ jobs:
       with:
         msystem: mingw32
         update: true #обновляем пакеты 
-        install: mingw-w64-i686-gcc mingw-w64-i686-pkg-config mingw-w64-i686-gtk3 mingw-w64-i686-goocanvas mingw-w64-x86_64-toolchain autotools git #установим пакеты       
-    - name: ---
-      run: |
-       # глянем, что содержат пакеты
-       pacman -Ql  mingw-w64-i686-pkg-config
-       pacman -Ql mingw-w64-i686-gtk3
-       pacman -Ql mingw-w64-i686-goocanvas
-      continue-on-error: true 
-    - name: make
+        install: zip mingw-w64-i686-gcc mingw-w64-i686-pkg-config mingw-w64-i686-gtk3 mingw-w64-i686-goocanvas mingw-w64-x86_64-toolchain autotools git #установим пакеты       
+    - name: make dist
       run: |
         cd win32
-        make
+        make dist
+    - name: dir
+      run: dir
 
 
 
