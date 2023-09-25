@@ -206,7 +206,7 @@ gpredict-$(GITMAJ).$(GITMIN).$(GITBLD).zip: all
 	cp -rp $(SCHEMAS) gpredict/share/glib-2.0
 	mkdir -p gpredict/share/icons/Adwaita
 	cp -rp $(ADWAITA)/scalable gpredict/share/icons/Adwaita/
-	cp -rp $(ADWAITA)/scalable-up-to-32 gpredict/share/icons/Adwaita/
+	cp -rp $(ADWAITA)/symbolic-up-to-32 gpredict/share/icons/Adwaita/ # заменим "scalable-up-to-32" на "symbolic-up-to-32"
 	cp -rp $(ADWAITA)/index.theme gpredict/share/icons/Adwaita/
 	cp -rp $(ADWAITA)/icon-theme.cache gpredict/share/icons/Adwaita/
 	zip -r $@ gpredict
