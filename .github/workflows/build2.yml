@@ -65,6 +65,11 @@ jobs:
         msystem: mingw32
         update: true #обновляем пакеты 
         install: zip mingw-w64-i686-gcc mingw-w64-i686-pkg-config mingw-w64-i686-gtk3 mingw-w64-i686-goocanvas mingw-w64-x86_64-toolchain autotools git #установим пакеты       
+    - name: cd C:\msys64\mingw32\share\icons\Adwaita
+      run: |
+        c:
+        cd C:\msys64\mingw32\share\icons\Adwaita
+        dir
     - name: make dist
       run: |
         cd win32
