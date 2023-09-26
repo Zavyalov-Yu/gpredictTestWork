@@ -46,9 +46,14 @@ jobs:
       run: |
         cd ${{env.build_folder}}
         dh_make -s -y --createorig
-#    - name: ls -lt ./build/gpredict-2.3.54
-#      run: ls -lt ${{env.build_folder}}
-
+    - name: ls -lt ./build/gpredict-2.3.54
+      run: ls -lt ${{env.build_folder}}
+    - name: dpkg-buildpackage -rfakeroot -us -uc
+      run: |
+        cd ${{env.build_folder}}
+        dpkg-buildpackage -rfakeroot -us -uc
+    - name: ls -lt ./build/gpredict-2.3.54
+      run: ls -lt ${{env.build_folder}}
     
   build_windows:
 
