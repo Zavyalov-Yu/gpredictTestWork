@@ -70,7 +70,7 @@ jobs:
         cd win32
         make dist
     - name: dir
-      run: dir
+      run: dir win32
 
 
 
