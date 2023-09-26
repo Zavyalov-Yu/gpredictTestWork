@@ -71,6 +71,11 @@ jobs:
         make dist
     - name: dir
       run: dir win32
+    - uses: actions/upload-artifact@v3
+      with:
+        name: art_windows
+        path: ./win32/gpredict-...zip
+      
 
 
 
