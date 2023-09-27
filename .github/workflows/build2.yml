@@ -38,31 +38,32 @@ jobs:
       run: |
         cd ${{env.build_folder}}
         make
-    - name: ls -lt ./build/gpredict-2.3.54
-      run: ls -lt ${{env.build_folder}}
+    # устанавливаем пакеты для работы dh_make
     - name: sudo apt-get install build-essential dh-make
       run: sudo apt-get install build-essential dh-make
     - name: dh_make -s -y --createorig
       run: |
         cd ${{env.build_folder}}
-        dh_make -s -y --createorig
-    - name: ls -lt ./build/gpredict-2.3.54
-      run: ls -lt ${{env.build_folder}}
+        dh_make -s -y --createorig 
+          # "-s" - single пакет; 
+          #"-y" - ответ yes на все вопросы; 
+          #-"createorig" - создание всех нужных папок и файлов атоматически.
+
+    # Собираем пакет      
     - name: dpkg-buildpackage -rfakeroot -us -uc
       run: |
         cd ${{env.build_folder}}
         dpkg-buildpackage -rfakeroot -us -uc
-    - name: ls -lt ./
-      run: ls -lt 
-    - name: ls -lt ./build
-      run: ls -lt ./build
-    - name: ls -lt ./build/gpredict-2.3.54
-      run: ls -lt ${{env.build_folder}}
+          # "-rfakeroot" - дает права действовать, как root
+          # "-us" - не подписывать пакет исходников
+          # "-uc" - не подписывать бинарный пакет
     - uses: actions/upload-artifact@v3
       with:
         name: art_Linux
-        path: ./build/gpredict_2.3.54-1_amd64.deb
-      
+        path: |
+          ./build/gpredict_2.3.54-1_amd64.deb
+          ./build/installing linux.txt
+
     
   build_windows:
 
@@ -88,7 +89,9 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: art_windows
-        path: ./win32/gpredict-...zip
+        path: |
+          ./win32/gpredict-...zip
+          ./installing windows.txt
       
 
 
