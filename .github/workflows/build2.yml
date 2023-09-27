@@ -1,7 +1,9 @@
 name: C_build2
 
-on: [workflow_dispatch]
-
+on:
+  push:
+    branches:
+      - master
 env:
   build_folder: ./build/gpredict-2.3.54
 
@@ -61,10 +63,10 @@ jobs:
       run: ls -lt ./build
     - uses: actions/upload-artifact@v3
       with:
-        name: art_Linux
+        name: for_Linux
         path: |
           ./build/gpredict_2.3.54-1_amd64.deb
-          ${{env.build_folder}}/installation_on_linux.txt
+          ./build/gpredict-2.3.54/installation_on_linux.txt
 
     
   build_windows:
@@ -89,7 +91,7 @@ jobs:
       run: dir win32
     - uses: actions/upload-artifact@v3
       with:
-        name: art_windows
+        name: for_windows
         path: |
           ./win32/gpredict-...zip
           ./installation_on_windows.txt
