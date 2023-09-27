@@ -58,7 +58,7 @@ jobs:
           # "-us" - не подписывать пакет исходников
           # "-uc" - не подписывать бинарный пакет
     - name: ls -lt ./build
-      run: ls -lt /build
+      run: ls -lt ./build
     - uses: actions/upload-artifact@v3
       with:
         name: art_Linux
