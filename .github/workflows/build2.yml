@@ -62,7 +62,7 @@ jobs:
         name: art_Linux
         path: |
           ./build/gpredict_2.3.54-1_amd64.deb
-          ./build/installing linux.txt
+          ./build/installation_on_linux.txt
 
     
   build_windows:
@@ -71,7 +71,6 @@ jobs:
     defaults:
      run:
        shell: msys2 {0}
-    
     steps:
     - name: clone repo
       uses: actions/checkout@v3
@@ -91,7 +90,7 @@ jobs:
         name: art_windows
         path: |
           ./win32/gpredict-...zip
-          ./installing windows.txt
+          ./installation_on_windows.txt
       
 
 
