@@ -1,0 +1,19 @@
+--- ./win32/old/gpredict.rc	2023-10-27 17:33:06.241685600 +0300
++++ ./win32/gpredict.rc	2023-10-30 16:55:56.288303800 +0300
+@@ -21,7 +21,9 @@
+ A ICON             "icons/gpredict-icon.ico"
+ 
+ LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+-1 VERSIONINFO
++// Раз ругается на метаданые, то уберем их
++
++/*1 VERSIONINFO
+     FILEVERSION     VERSION_RSRC
+     PRODUCTVERSION  VERSION_RSRC
+     FILEOS          VOS__WINDOWS32
+@@ -47,4 +49,4 @@
+     {
+         VALUE "Translation", 0x0409, 0x04E4
+     }
+-}
++}*/

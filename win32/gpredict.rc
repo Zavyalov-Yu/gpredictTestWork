@@ -21,7 +21,9 @@
 A ICON             "icons/gpredict-icon.ico"
 
 LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
-1 VERSIONINFO
+// Раз ругается на метаданые, то уберем их
+
+/*1 VERSIONINFO
     FILEVERSION     VERSION_RSRC
     PRODUCTVERSION  VERSION_RSRC
     FILEOS          VOS__WINDOWS32
@@ -47,4 +49,4 @@ LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
     {
         VALUE "Translation", 0x0409, 0x04E4
     }
-}
+}*/

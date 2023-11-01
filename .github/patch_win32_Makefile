@@ -1,0 +1,11 @@
+--- ./win32/old/Makefile	2023-10-27 17:33:06.240718600 +0300
++++ ./win32/Makefile	2023-10-30 16:55:56.287303800 +0300
+@@ -206,7 +206,7 @@
+ 	cp -rp $(SCHEMAS) gpredict/share/glib-2.0
+ 	mkdir -p gpredict/share/icons/Adwaita
+ 	cp -rp $(ADWAITA)/scalable gpredict/share/icons/Adwaita/
+-	cp -rp $(ADWAITA)/scalable-up-to-32 gpredict/share/icons/Adwaita/
++	cp -rp $(ADWAITA)/symbolic-up-to-32 gpredict/share/icons/Adwaita/ # заменим "scalable-up-to-32" на "symbolic-up-to-32"
+ 	cp -rp $(ADWAITA)/index.theme gpredict/share/icons/Adwaita/
+ 	cp -rp $(ADWAITA)/icon-theme.cache gpredict/share/icons/Adwaita/
+ 	zip -r $@ gpredict
