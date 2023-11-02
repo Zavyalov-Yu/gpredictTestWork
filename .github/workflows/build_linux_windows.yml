@@ -60,8 +60,12 @@ jobs:
           # "-rfakeroot" - дает права действовать, как root
           # "-us" - не подписывать пакет исходников
           # "-uc" - не подписывать бинарный пакет
+    - name: tree -Ra
+      run: tree -Ra
+
     - name: ls -lt ./build
       run: ls -lt ./build
+    
     - uses: actions/upload-artifact@v3
       with:
         name: for_Linux
@@ -129,6 +133,20 @@ jobs:
               ./build/gpredict_2.3.54-1_amd64.deb
               ./build/gpredict-2.3.54/.github/installation_on_linux.txt
 
+    - name: Path
+      run: |
+            echo "ls ./"
+            echo
+            ls ./
+            
+            echo "ls ./build/"
+            echo
+            ls ./build/ -rl
+
+            echo "ls ./"
+            echo
+            ls ./
+            
     - name: archiving
       run: |
             zip -r for_linux.zip ./build/gpredict_2.3.54-1_amd64.deb ./build/gpredict-2.3.54/.github/installation_on_linux.txt
