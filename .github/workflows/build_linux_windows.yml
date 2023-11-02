@@ -135,21 +135,12 @@ jobs:
 
     - name: Path
       run: |
-            echo "ls ./"
-            echo
-            ls ./
-            
-            echo "ls ./build/"
-            echo
-            ls ./build/ -rl
-
-            echo "ls ./"
-            echo
-            ls ./
+            echo "tree -Ra"
+            run: tree -Ra
             
     - name: archiving
       run: |
-            zip -r for_linux.zip ./build/gpredict_2.3.54-1_amd64.deb ./build/gpredict-2.3.54/.github/installation_on_linux.txt
+            zip -r for_linux.zip ./build/gpredict_2.3.54-1_amd64.deb ./.github/installation_on_linux.txt
             zip -r for_windows.zip ./win32/gpredict-...zip ./.github/installation_on_windows.txt
             
       # Создаем релиз, куда вдальнейшем добавим загруженные выше артефакты
