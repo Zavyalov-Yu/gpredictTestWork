@@ -71,7 +71,7 @@ jobs:
         name: for_Linux
         path: |
           ./build/gpredict_2.3.54-1_amd64.deb
-          ./build/gpredict-2.3.54/.github/installation_on_linux.txt
+          ./.github/installation_on_linux.txt
 
     
   build_windows:
