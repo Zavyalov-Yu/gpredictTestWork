@@ -136,7 +136,7 @@ jobs:
     - name: Path
       run: |
             echo "tree -Ra"
-            run: tree -Ra
+            tree -Ra
             
     - name: archiving
       run: |
