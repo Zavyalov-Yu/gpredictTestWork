@@ -1,4 +1,4 @@
-name: C_build2
+name: build_linux_windows
 
 on:
   push:
