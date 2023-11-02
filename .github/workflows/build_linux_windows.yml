@@ -10,7 +10,6 @@ env:
 
 jobs:
   build_linux:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -60,26 +59,29 @@ jobs:
           # "-rfakeroot" - дает права действовать, как root
           # "-us" - не подписывать пакет исходников
           # "-uc" - не подписывать бинарный пакет
+
+    - name: archiving
+      run: |
+        # перносим файлы в корень проекта
+        cp   ./build/gpredict_2.3.54-1_amd64.deb ./gpredict_2.3.54-1_amd64.deb
+        cp   ./.github/installation_on_linux.txt ./installation_on_linux.txt
+        # арихвируем их
+        zip  for_linux.zip ./gpredict_2.3.54-1_amd64.deb ./installation_on_linux.txt
+            
     - name: tree -Ra
       run: tree -Ra
-
-    - name: ls -lt ./build
-      run: ls -lt ./build
-    
+      
     - uses: actions/upload-artifact@v3
       with:
         name: for_Linux
-        path: |
-          ./build/gpredict_2.3.54-1_amd64.deb
-          ./.github/installation_on_linux.txt
-
+        path: ./for_linux.zip
     
   build_windows:
-
     runs-on: windows-latest
     defaults:
      run:
        shell: msys2 {0}
+    
     steps:
     - name: clone repo
       uses: actions/checkout@v3
@@ -113,6 +115,7 @@ jobs:
   Create_release: # Создаем релиз и добавляем в него файлы артефактов
     runs-on: ubuntu-latest
     needs: [build_linux, build_windows]
+    
     steps:
       # загрузим артефакты, полученные в предыдущих джобах
     - name: Download artifact windows
@@ -121,7 +124,7 @@ jobs:
       with:
             name: for_windows
             path: |
-                ./win32/gpredict-...zip
+                ./win32/gpredict-...zip 
                 ./.github/installation_on_windows.txt
             
     - name: Download artifact linux
@@ -130,7 +133,7 @@ jobs:
       with:
             name: for_Linux
             path: |
-              ./build/gpredict_2.3.54-1_amd64.deb
+              ./build/gpredict_2.3.54-1_amd64.deb 
               ./build/gpredict-2.3.54/.github/installation_on_linux.txt
 
     - name: Path
