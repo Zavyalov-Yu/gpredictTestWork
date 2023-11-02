@@ -108,66 +108,61 @@ jobs:
           
   Create_release: # Создаем релиз и добавляем в него файлы артефактов
     runs-on: ubuntu-latest
-    needs: [Build_linux, Build_windows]
+    needs: [build_linux, build_windows]
     steps:
       # загрузим артефакты, полученные в предыдущих джобах
     - name: Download artifact windows
-        id: download_artifact_windows
-        uses: actions/download-artifact@v3
-        with:
+      id: download_artifact_windows
+      uses: actions/download-artifact@v3
+      with:
             name: for_windows
             path: |
                 ./win32/gpredict-...zip
                 ./.github/installation_on_windows.txt
             
     - name: Download artifact linux
-        id: download_artifact_linux
-        uses: actions/download-artifact@v3
-        with:
+      id: download_artifact_linux
+      uses: actions/download-artifact@v3
+      with:
             name: for_Linux
             path: |
               ./build/gpredict_2.3.54-1_amd64.deb
               ./build/gpredict-2.3.54/.github/installation_on_linux.txt
 
     - name: archiving
-        run: |
+      run: |
             zip -r for_linux.zip ./build/gpredict_2.3.54-1_amd64.deb ./build/gpredict-2.3.54/.github/installation_on_linux.txt
             zip -r for_windows.zip ./win32/gpredict-...zip ./.github/installation_on_windows.txt
             
       # Создаем релиз, куда вдальнейшем добавим загруженные выше артефакты
     - name: create release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
+      id: create_release
+      uses: actions/create-release@v1
+      env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
+      with:
             tag_name: v2.2.1
             release_name: Release v2.2.1
       
       # Добавляем в релиз файлы артефактов
     - name: Upload Release Asset
-        id: upload_release_asset_windows 
-        uses: actions/upload-release-asset@v1
-        env:
+      id: upload_release_asset_windows 
+      uses: actions/upload-release-asset@v1
+      env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
+      with:
            upload_url: ${{ steps.create_release.outputs.upload_url }} 
            asset_path: for_windows.zip
            asset_name: for_windows.zip
            asset_content_type: application/zip
 
     - name: Upload Release Asset
-        id: upload_release_asset_linux
-        uses: actions/upload-release-asset@v1
-        env:
+      id: upload_release_asset_linux
+      uses: actions/upload-release-asset@v1
+      env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
+      with:
            upload_url: ${{ steps.create_release.outputs.upload_url }} 
            asset_path: for_linux.zip
            asset_name: for_linux.zip
            asset_content_type: application/zip
-
-
-
-
-
