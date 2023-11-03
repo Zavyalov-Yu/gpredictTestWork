@@ -145,14 +145,14 @@ jobs:
       id: download_artifact_windows
       uses: actions/download-artifact@v3
       with:
-            name: for_windows
+            name: gpredict_windows
             path: ./for_windows.zip
             
     - name: Download artifact linux
       id: download_artifact_linux
       uses: actions/download-artifact@v3
       with:
-            name: for_Linux
+            name: gpredict_linux
             path: ./for_linux.zip
 
     - name: Path
