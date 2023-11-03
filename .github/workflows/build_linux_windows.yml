@@ -161,13 +161,13 @@ jobs:
             tree -Ra
             echo "ls ./"
             echo 
-            ls ./
+            ls -la ./
             echo "ls ./for_linux.zip"
             echo 
-            ls ./for_linux.zip
+            ls -la ./for_linux.zip
             echo "ls ./for_windows.zip"
             echo 
-            ls ./for_windows.zip
+            ls -la ./for_windows.zip
 
 
     #- name: remove arch
