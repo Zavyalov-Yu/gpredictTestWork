@@ -162,8 +162,8 @@ jobs:
 
     - name: remove arch
       run: |
-           cp ./gpredict_windows.zip/for_windows.zip.zip ./for_windows.zip.zip
-           cp ./gpredict_linux.zip/for_linux.zip ./for_linux.zip
+           cp ./for_windows.zip/for_windows.zip.zip ./for_windows.zip.zip
+           cp ./for_linux.zip/for_linux.zip ./for_linux.zip
             
             
             
