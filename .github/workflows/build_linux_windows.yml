@@ -82,7 +82,7 @@ jobs:
       
     - uses: actions/upload-artifact@v3
       with:
-        name: for_Linux
+        name: gpredict_linux
         path: ./for_linux.zip
     
   build_windows:
@@ -132,7 +132,7 @@ jobs:
     
     - uses: actions/upload-artifact@v3
       with:
-        name: for_windows
+        name: gpredict_windows
         path: ./for_windows.zip
           
   Create_release: # Создаем релиз и добавляем в него файлы артефактов
@@ -159,6 +159,12 @@ jobs:
       run: |
             echo "tree -Ra"
             tree -Ra
+
+    - name: remove arch
+      run: |
+           cp ./gpredict_windows.zip/for_windows.zip.zip ./for_windows.zip.zip
+           cp ./gpredict_linux.zip/for_linux.zip ./for_linux.zip
+            
             
             
       # Создаем релиз, куда вдальнейшем добавим загруженные выше артефакты
