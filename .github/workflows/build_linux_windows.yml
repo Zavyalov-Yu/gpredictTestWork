@@ -159,6 +159,16 @@ jobs:
       run: |
             echo "tree -Ra"
             tree -Ra
+            echo "ls ./"
+            echo 
+            ls ./
+            echo "ls ./for_linux.zip"
+            echo 
+            ls ./for_linux.zip
+            echo "ls ./for_windows.zip"
+            echo 
+            ls ./for_windows.zip
+
 
     #- name: remove arch
      # run: |
