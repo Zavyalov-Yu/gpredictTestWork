@@ -162,7 +162,7 @@ jobs:
 
     - name: remove arch
       run: |
-           cp ./for_windows.zip/for_windows.zip.zip ./for_windows.zip.
+           cp ./for_windows.zip/for_windows.zip ./for_windows.zip.
            cp ./for_linux.zip/for_linux.zip ./for_linux.zip
             
             
