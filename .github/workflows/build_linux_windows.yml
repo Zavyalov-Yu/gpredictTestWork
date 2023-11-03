@@ -177,6 +177,12 @@ jobs:
             tag_name: v2.2.1
             release_name: Release v2.2.1
       
+      # Выводим ошибку, если релиз уже существует
+    - name: If release already exists
+      run: |
+          echo "steps.create_release.outcome"
+          echo steps.create_release.outcome
+      
       # Добавляем в релиз файлы артефактов
     - name: Upload Release Asset
       id: upload_release_asset_windows 
