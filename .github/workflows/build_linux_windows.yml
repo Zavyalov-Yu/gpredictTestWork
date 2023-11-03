@@ -123,7 +123,7 @@ jobs:
       run: |
         # перносим файлы в корень проекта
         cp   ./win32/gpredict-...zip ./gpredict-...zip
-        cp   ./.github/installation_on_windows.txt 
+        cp   ./.github/installation_on_windows.txt  ./installation_on_windows.txt
         # добавляем в существующий архив файл инструкции
         zip -u ./gpredict-...zip ./installation_on_windows.txt
         # Переименовываем архив
