@@ -172,22 +172,25 @@ jobs:
 
     - name: remove arch
       run: |
-         cd ./for_windows.zip/
-         mv ./for_windows.zip ../
-         cd ../ 
-         cd ./for_linux.zip
-         mv ./for_linux.zip ../
+         cp ./for_windows.zip/for_windows.zip ./
+         cp ./for_linux.zip/for_linux.zip ./
 
     - name: Path 2 
       run: |
             echo "tree -Ra"
             tree -Ra
+            echo 
+            echo -----------
             echo "ls ./"
             echo 
             ls -la ./
+            echo 
+            echo -----------
             echo "ls ./for_linux.zip"
             echo 
             ls -la ./for_linux.zip
+            echo 
+            echo -----------
             echo "ls ./for_windows.zip"
             echo 
             ls -la ./for_windows.zip
