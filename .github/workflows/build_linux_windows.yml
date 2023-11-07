@@ -172,8 +172,8 @@ jobs:
 
     - name: remove arch
       run: |
-         cp ./for_windows.zip/for_windows.zip ./
-         cp ./for_linux.zip/for_linux.zip ./
+         cp ./for_windows.zip/for_windows.zip ./For_windows.zip
+         cp ./for_linux.zip/for_linux.zip ./For_linux.zip
 
     - name: Path 2 
       run: |
@@ -214,8 +214,8 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
            upload_url: ${{ steps.create_release.outputs.upload_url }} 
-           asset_path: for_windows.zip
-           asset_name: ./for_windows.zip 
+           asset_path: For_windows.zip
+           asset_name: ./For_windows.zip 
            asset_content_type: application/zip
 
     - name: Upload Release Asset linux
@@ -225,6 +225,6 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
            upload_url: ${{ steps.create_release.outputs.upload_url }} 
-           asset_path: for_linux.zip
-           asset_name: ./for_windows.zip 
+           asset_path: For_linux.zip
+           asset_name: ./For_windows.zip 
            asset_content_type: application/zip
